@@ -87,9 +87,7 @@ const days = ['월', '화', '수', '목', '금', '토', '일'];
 console.log(days[1]); // 예상 결과: 화요일
 console.log(days[3]); // 예상 결과: 목요일
 
-cosnt students = ["정다운", "김철수", "이영희", "박민수"];
+const students = ["정다운", "김철수", "이영희", "박민수"];
 
 let me = students[0];
 console.log(me); // 예상 결과: 정다운   
-
-
