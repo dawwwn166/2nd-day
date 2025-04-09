@@ -91,3 +91,135 @@ const students = ["정다운", "김철수", "이영희", "박민수"];
 
 let me = students[0];
 console.log(me); // 예상 결과: 정다운   
+
+class multi_student{
+    constructor(name, adress){
+        this.name = name;
+        this.adress = adress;
+    }
+
+    introduce(){
+        console.log(`안녕하세요, ${this.name}입니다. 제 거주지는 ${this.adress}입니다.`);
+    }
+}
+
+const studentList = [
+    {
+     name: "정다운",
+     adress: "서울시 강남구"
+    },
+    {
+     name: "김철수",
+     adress: "서울시 강북구"
+    },
+    {
+     name: "이영희",
+     adress: "서울시 송파구"
+    },
+    {
+     name: "박민수",
+     adress: "서울시 강서구"
+    }
+    ];
+
+    console.log(studentList[0].name);  
+
+
+    studentList.forEach((value, index, array) => {
+        console.log(value.name);
+    });
+
+
+    const user = {
+        isLoggedIn : true,
+        role : "admin",
+        age : 99
+        };
+
+    const user2 = {
+        isLoggedIn : true,
+        role : "friend",
+        age : 15
+    };
+
+    let canAccessAdminPage; // admin 페이지 접근 가능 여부를 저장할 변수
+
+    if (user.isLoggedIn) {
+        if (user.role === "admin") {
+            canAccessAdminPage = true; // admin 페이지 접근 가능
+        } else {
+            canAccessAdminPage = false;     // admin 페이지 접근 불가능
+        }
+    }
+    else {
+        canAccessAdminPage = false; // 로그인하지 않음
+    }
+
+    console.log("admin 페이지 접근 가능 여부:", canAccessAdminPage); // 예상 결과: true
+
+    // 간략화 코드
+    const canAccessAdminPagev2 = user.isLoggedIn && user.role === "admin";
+    console.log("admin 페이지 접근 가능 여부:", canAccessAdminPagev2); // 예상 결과: true
+
+    // user를 guest로 변경
+    user.role = "guest";
+    const canAccessAdminPagev3 = user.isLoggedIn && user.role === "admin";
+    console.log("admin 페이지 접근 가능 여부:", canAccessAdminPagev3); // 예상 결과: false
+
+    // user2 로그인 판단
+    const canAccessuserlevel = user2.isLoggedIn && user2.age >= "10";
+    console.log("user2 로그인 여부:", canAccessuserlevel); // 예상 결과: true
+
+    const userinPut = "";
+
+    if (userinPut === "") {
+        // 값이 비어있을 때 실행되는 코드
+        console.log("값이 비어있습니다.");
+    } 
+
+    if (!userinPut) {
+        // 값이 비어있을 때 실행되는 코드
+        console.log("값이 비어있습니다.");
+    }
+    
+
+    // color object를 만들고 색상 출력하기
+
+    const color = {
+        red: "#FF0000",
+        green: "#00FF00",
+        blue: "#0000FF",
+        yellow: "#FFFF00",
+        black: "#000000",
+        white: "#FFFFFF"
+    };
+
+    console.log(color.red); // 예상 결과: #FF0000
+    console.log(color.green); // 예상 결과: #00FF00 
+
+    // red 색상 변경하기
+    color.red = "#FF5733"; // 새로운 색상으로 변경 예상 결과 : #FF5733
+    console.log(color.red); // 예상 결과: #FF5733
+
+    const {red, green, blue} = color;
+    console.log(red); // 예상 결과: #FF5733
+    console.log(green); // 예상 결과: #00FF00
+
+
+    const animals = ["dog", "cat", "rabbit", "tiger"];
+
+    const [a,b,c,d] = animals;
+    console.log(a); // 예상 결과: dog
+
+    const todoItems = {
+        title : "할일",
+        descriptions : "양갈비 먹기"
+    }
+    console.log(todoItems); // 예상 결과: { title: '할일', descriptions: '양갈비 먹기' }
+    const newtodoItems = {
+        ...todoItems,
+        iscompleted : false,
+        descriptions : "샐러드 먹기"
+    }
+
+    console.log(newtodoItems); // 예상 결과: { title: '할일', descriptions: '샐러드 먹기', iscompleted: false }
